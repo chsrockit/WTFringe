@@ -1,0 +1,3 @@
+var WTF = WTF || (function() {
+
+}());
