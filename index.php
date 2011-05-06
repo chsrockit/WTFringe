@@ -6,7 +6,7 @@ $url = 'http://projects.festivalslab.com/2010/api/v1/listings.json?id=festivals2
 $json = file_get_contents($url);
 $json_object = json_decode($json);
 $hhmm = $json_object[0]->start_time_hhmm;
-$yymmdd = $json_object[0]->start_time_yyyymmdd;
+$yymmdd = $json_object[0]->start_date_yyyymmdd;
 echo $hhmm;
 echo $yymmdd;
 $year = substr($yymmdd, 0, 4);
