@@ -22,14 +22,20 @@ $json_object = json_decode($json);
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js" > </script>
 
 <body>
+
+<div>
 <?php 
 
 $int = array_rand($info);
 echo $info[$int];
-echo $json;
-echo $json_object["event_code"];
+// echo $json;
+echo $json_object[0]->event_code;
+echo $json_object[0]->event_code;
+echo $json_object[0]->event_code;
+echo $json_object[0]->event_code;
+
 ?>
-    
+</div>    
 </body>
 </html>
 
