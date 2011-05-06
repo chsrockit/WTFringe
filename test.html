@@ -1,0 +1,34 @@
+<?php 
+$info = array('How about some fucking', 'Why the fuck don\'t you go fucking watch', 'Fuck what you\'re doing now, go fucking watch', 'You should probably move your ass and go fucking watch', 'go and fucking watch take a trip on the wild side and go fucking watch', 'Develop a fucking cultural identity and go fucking watching', 'Save a baby seal and go fucking watch', 'Turn off your phone and go fucking watch', 'watch your watch when you fucking watch', 'go fucking watch', 'SIT QUIETLY AND APPLAUD LOUDLY WHEN YOU FUCKING WATCH');
+$randint = rand(3040,3400);
+$url = 'http://projects.festivalslab.com/2010/api/v1/listings.json?id=festivals2010_'.(string)$randint;
+$json = file_get_contents($url);
+$json_object = json_decode($json);
+?>
+<!doc
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/wtf.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js" ></script>
+    <script type="text/javascript" href="js/wtf.js"></script>
+  </head>
+  <body class="wtf">
+    <h1 id="wtf">
+	<?$int = array_rand($info);
+	echo $info[$int];?>
+	</h1>
+    <h2 id="eventtitle"><?echo $json_object[0]->event_desc;?></h2>
+    <div id="eventinfo" class="unexpanded">
+      <p id="eventdescription"><?echo $json_object[0]->event_info;?></p>
+      <p id="venue"><?echo $json_object[0]->venue_desc;?></p>
+      <p id="time"><?echo $json_object[0]->start_time_hhmm;?></p>
+    </div>
+    <ul>
+    <li><a id="expanddescription" href="#">asdf</a></li>
+    <li><a href="#">I don't want to fucking see that</a></li>
+    <li><a href="#">I don't fucking like profanity</a></li>
+    </ul>
+  </body>
+</html>
