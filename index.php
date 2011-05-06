@@ -21,13 +21,15 @@ $json_object = json_decode($json);
     <h2 id="eventtitle"><?echo $json_object[0]->event_desc;?></h2>
     <div id="eventinfo">
       <p id="eventdescription"><?echo $json_object[0]->event_info;?></p>
-      <p id="venue"><?echo $json_object[0]->venue_desc;?></p>
-      <p id="time"><?echo $json_object[0]->start_time_hhmm;?></p>
+      <dl>
+      <dt>Where</dt><dd id="venue"><?echo $json_object[0]->venue_desc;?></dd>
+      <dt>When</dt><dd id="time"><?echo $json_object[0]->start_time_hhmm;?></dd>
+      <dl>
     </div>
     <ul>
     <li><a id="expanddescription" href="#">I want to read the fucking description</a></li>
     <li><a href="">I don't want to fucking see that</a></li>
-    <li><a href="">I don't fucking like profanity</a></li>
+    <li><a href="/splash_site/profanity.html">I don't fucking like profanity</a></li>
     </ul>
   </body>
 </html>
