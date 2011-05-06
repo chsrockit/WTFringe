@@ -99,7 +99,7 @@ a {
   position: fixed;
   right: 25px;
   bottom: 5px;
-  font-size: 0.6em;
+  font-size: 0.8em;
 }
 
 #fuckers a {
@@ -107,3 +107,8 @@ a {
     font-weight: bold;
     color: black;
 }
+
+#fuckers a:hover {
+    font-size: 0.9em;
+}
+
