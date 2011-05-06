@@ -8,8 +8,14 @@ $json_object = json_decode($json);
 $hhmm = $json_object->start_time_hhmm;
 $yymmdd = $json_object->start_time_yyyymmdd;
 
-$arr = strptime($yymmdd . $hhmm, '%Y%m%d%H%M');
-$t  = mktime($arr['tm_hour'], $arr['tm_min'],$arr['tm_sec'], $arr['tm_mon'], $arr['tm_mday'],  $arr['tm_year'] + 1900);
+$year = substr($yymmdd, 0, 4);
+$month = substr($yymmdd, 4, 2);
+$day = substr($yymmdd, -2);
+
+$hour = substr($hhmm, 0, 2);
+$min = substr($hhmm, -2);
+
+$t  = mktime($hour, $min, 0, $month, $day, $year);
 $event_time = strftime('%A %e %Y %R',  $t);
 ?>
 <!doctype html>
