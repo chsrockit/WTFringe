@@ -5,8 +5,11 @@ $url = 'http://projects.festivalslab.com/2010/api/v1/listings.json?id=festivals2
 $json = file_get_contents($url);
 /*$json_object = json_decode($json);*/
 ?>
-
+<!doctype html>
 <html>
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="css/wtf.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js" > </script>
 
 <body>
