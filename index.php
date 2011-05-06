@@ -20,8 +20,11 @@ $json_object = json_decode($json);
 $int = array_rand($info);
 echo $info[$int];
 // echo $json;
-$wtfobject = $json_object[0]->event_code;
-print_r($wtfobject);
+echo $json_object[0]->event_code;
+echo $json_object[0]->event_code;
+echo $json_object[0]->event_code;
+echo $json_object[0]->event_code;
+
 ?>
 </div>    
 </body>
