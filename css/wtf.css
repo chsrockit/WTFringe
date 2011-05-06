@@ -96,8 +96,10 @@ a {
 }
 
 #fuckers {
+  position: fixed;
   right: 25px;
   bottom: 5px;
+  font-size: 0.6em;
 }
 
 #fuckers a {
