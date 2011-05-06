@@ -9,8 +9,8 @@ $hhmm = $json_object->start_time_hhmm;
 $yymmdd = $json_object->start_time_yyyymmdd;
 
 $arr = strptime($yymmdd . $hhmm, '%Y%m%d%H%M');
-#$t  = mktime($arr['tm_hour'], $arr['tm_min'],$arr['tm_sec'], $arr['tm_mday'], $arr['tm_mon'], $arr['tm_year'] + 1900);
-$event_time = strftime('%A %e %Y %R',  mktime($arr));
+$t  = mktime($arr['tm_hour'], $arr['tm_min'],$arr['tm_sec'], $arr['tm_mday'], $arr['tm_mon'], $arr['tm_year'] + 1900);
+$event_time = strftime('%A %e %Y %R',  $t);
 ?>
 <!doctype html>
 <html>
