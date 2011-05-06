@@ -5,15 +5,15 @@ $randint = rand(3040,3400);
 $url = 'http://projects.festivalslab.com/2010/api/v1/listings.json?id=festivals2010_'.(string)$randint;
 $json = file_get_contents($url);
 $json_object = json_decode($json);
-$hhmm = $json_object->start_time_hhmm;
-$yymmdd = $json_object->start_time_yyyymmdd;
+$hhmm = $json_object[0]->start_time_hhmm;
+$yymmdd = $json_object[0]->start_time_yyyymmdd;
 echo $hhmm;
 echo $yymmdd;
 $year = substr($yymmdd, 0, 4);
 $month = substr($yymmdd, 4, 2);
 $day = substr($yymmdd, -2);
 
-$hour = substr($hhmm, 0, 2);
+$hour = substr($hhmm, -2, 2);
 $min = substr($hhmm, -2);
 
 $event_time = $day . '/' . $month . '/' . $year  . ' ' . $hour . ':' . $minute;
