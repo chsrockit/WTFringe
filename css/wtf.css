@@ -95,17 +95,13 @@ a {
   color: blue;
 }
 
-#fucker {
+#fuckers {
   right: 25px;
   bottom: 5px;
 }
 
-#fucker a {
+#fuckers a {
     text-decoration: none;
     font-weight: bold;
-    color: black;
-}
-
-#fucker a:hover {
     color: black;
 }
