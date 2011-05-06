@@ -11,7 +11,7 @@ $json_object = json_decode($json);
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/wtf.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js" ></script>
-    <script type="text/javascript" href="js/wtf.js"></script>
+    <script type="text/javascript" src="js/wtf.js"></script>
   </head>
   <body class="wtf">
     <h1 id="wtf">
