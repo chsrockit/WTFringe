@@ -5,7 +5,6 @@ $url = 'http://projects.festivalslab.com/2010/api/v1/listings.json?id=festivals2
 $json = file_get_contents($url);
 $json_object = json_decode($json);
 ?>
-<!doc
 <!doctype html>
 <html>
   <head>
