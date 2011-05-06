@@ -95,6 +95,10 @@ a {
   color: blue;
 }
 
+#expanddescription {
+  font-size 18px;
+}
+
 #fuckers {
   position: fixed;
   right: 25px;
@@ -112,3 +116,19 @@ a {
     text-decoration: underline;
 }
 
+#profanity {
+  position: fixed;
+  right: 25px;
+  bottom: 5px;
+  font-size: 0.8em;
+}
+
+#profanity a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+#profanity a:hover {
+    text-decoration: underline;
+}
