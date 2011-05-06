@@ -4,6 +4,10 @@ $randint = rand(3040,3400);
 $url = 'http://projects.festivalslab.com/2010/api/v1/listings.json?id=festivals2010_'.(string)$randint;
 $json = file_get_contents($url);
 $json_object = json_decode($json);
+$hhmm = $json_object->start_time_hhmm;
+$yymmdd = $json_object->start_time_yyyymmdd;
+
+$event_time = DateTime::createFromFormat("YmdHi", $yymmdd . $hhmm);
 ?>
 <!doctype html>
 <html>
@@ -26,7 +30,7 @@ $json_object = json_decode($json);
         <p id="eventdescription"><?echo $json_object[0]->event_info;?></p>
         <dl>
         <dt>Where</dt><dd id="venue"><?echo $json_object[0]->venue_desc;?></dd>
-        <dt>When</dt><dd id="time"><?echo $json_object[0]->start_time_hhmm;?></dd>
+        <dt>When</dt><dd id="time"><?echo $event_time->format("j M Y g:i a")?></dd>
         <dl>
       </div>
     </div>
