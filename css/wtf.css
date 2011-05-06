@@ -96,7 +96,6 @@ a {
 }
 
 #fucker {
-  position: fixed;
   right: 25px;
   bottom: 5px;
 }
@@ -104,5 +103,9 @@ a {
 #fucker a {
     text-decoration: none;
     font-weight: bold;
+    color: black;
+}
+
+#fucker a:hover {
     color: black;
 }
