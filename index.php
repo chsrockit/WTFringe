@@ -1,4 +1,5 @@
 <?php 
+ini_set('date.timezone', 'Europe/London');
 $info = array('GO FUCKING SEE THIS','Storm the stage after you fucking watch',' Sit quietly and applaud loudly when you fucking watch',' Stage a competing Fringe show so that no one will fucking watch',' Watch your watch when you fucking watch',' How about you fucking watch',' Why don\'t you fucking watch',' Pick the pockets of those who fucking watch',' Bring a friend to fucking watch',' Steal fucking ideas when you fucking watch');
 $randint = rand(3040,3400);
 $url = 'http://projects.festivalslab.com/2010/api/v1/listings.json?id=festivals2010_'.(string)$randint;
@@ -7,7 +8,8 @@ $json_object = json_decode($json);
 $hhmm = $json_object->start_time_hhmm;
 $yymmdd = $json_object->start_time_yyyymmdd;
 
-$event_time = DateTime::createFromFormat("YmdHi", $yymmdd . $hhmm);
+$arr = strptime($yymmdd . $hhmm, '%Y%m%d%H%M%S');
+$event_time = strftime('%A %e %Y %R',  mktime($arr));
 ?>
 <!doctype html>
 <html>
@@ -44,7 +46,7 @@ $event_time = DateTime::createFromFormat("YmdHi", $yymmdd . $hhmm);
         <p id="eventdescription"><?echo $json_object[0]->event_info;?></p>
         <dl>
         <dt>Where</dt><dd id="venue"><?echo $json_object[0]->venue_desc;?></dd>
-        <dt>When</dt><dd id="time"><?echo $event_time->format("j M Y g:i a")?></dd>
+        <dt>When</dt><dd id="time"><?echo $event_time?></dd>
         <dl>
       </div>
     </div>
