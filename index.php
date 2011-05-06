@@ -15,8 +15,7 @@ $day = substr($yymmdd, -2);
 $hour = substr($hhmm, 0, 2);
 $min = substr($hhmm, -2);
 
-$t  = mktime($hour, $min, 0, $month, $day, $year);
-$event_time = strftime('%A %e %Y %R',  $t);
+$event_time = $day . '/' . $month . '/' . $year  . ' ' . "$hour:$minute";
 ?>
 <!doctype html>
 <html>
