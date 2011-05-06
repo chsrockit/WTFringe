@@ -1,9 +1,12 @@
 <?php 
 $info = array('GO FUCKING SEE THIS', '', 'see these');
 ?>
-
+<!doctype html>
 <html>
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="css/wtf.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js" > </script>
+<script type="text/javascript" src="js/wtf.js"></script>
 
 <body>
 <?php 
