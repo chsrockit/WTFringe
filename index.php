@@ -7,7 +7,8 @@ $json = file_get_contents($url);
 $json_object = json_decode($json);
 $hhmm = $json_object->start_time_hhmm;
 $yymmdd = $json_object->start_time_yyyymmdd;
-
+echo $hhmm;
+echo $yymmdd;
 $year = substr($yymmdd, 0, 4);
 $month = substr($yymmdd, 4, 2);
 $day = substr($yymmdd, -2);
