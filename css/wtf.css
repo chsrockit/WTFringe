@@ -50,6 +50,9 @@ table {
 .wtf {
   padding: 30px;
   font-family: 'Didact Gothic', sans-serif;
+}
+
+h1,h2,ul {
   text-transform: uppercase;
 }
 

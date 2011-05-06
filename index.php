@@ -25,7 +25,7 @@ $json_object = json_decode($json);
       <p id="time"><?echo $json_object[0]->start_time_hhmm;?></p>
     </div>
     <ul>
-    <li><a id="expanddescription" href="#">asdf</a></li>
+    <li><a id="expanddescription" href="#">I want to read the fucking description</a></li>
     <li><a href="#">I don't want to fucking see that</a></li>
     <li><a href="#">I don't fucking like profanity</a></li>
     </ul>
