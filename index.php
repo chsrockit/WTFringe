@@ -1,5 +1,9 @@
 <?php 
-$info = array('GO FUCKING SEE THIS', '', 'see these');
+$info = array('GO FUCKING SEE THIS', 'MORE', 'see these');
+$randint = rand(3040,3400);
+$url = 'http://projects.festivalslab.com/2010/api/v1/listings.json?id=festivals2010_'.(string)$randint;
+$json = file_get_contents($url);
+/*$json_object = json_decode($json);*/
 ?>
 
 <html>
@@ -10,6 +14,8 @@ $info = array('GO FUCKING SEE THIS', '', 'see these');
 
 $int = array_rand($info);
 echo $info[$int];
+echo $json;
+/*echo $json_object["event_code"];*/
 ?>
     
 </body>
