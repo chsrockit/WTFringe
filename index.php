@@ -1,5 +1,14 @@
 <?php 
-$info = array('GO FUCKING SEE THIS', 'MORE', 'see these');
+$info = array('GO FUCKING SEE THIS','Storm the stage after you fucking watch','
+Sit quietly and applaud loudly when you fucking watch','
+Stage a competing Fringe show so that no one will fucking watch','
+Watch your watch when you fucking watch','
+How about you fucking watch','
+Why don\'t you fucking watch','
+Pick the pockets of those who fucking watch','
+Bring a friend to fucking watch','
+Steal fucking ideas when you fucking watch');
+
 $randint = rand(3040,3400);
 $url = 'http://projects.festivalslab.com/2010/api/v1/listings.json?id=festivals2010_'.(string)$randint;
 $json = file_get_contents($url);
