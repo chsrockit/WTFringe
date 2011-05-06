@@ -32,5 +32,6 @@ $json_object = json_decode($json);
     <li><a href="">I don't want to fucking see that</a></li>
     <li><a href="/splash_site/profanity.html">I don't fucking like profanity</a></li>
     </ul>
+    <div id="fuckers">This site was fucking made by <a href="http://github.com/chsrockit/" target="_blank">fuckers</a> at <a href="http://www.culturehackscotland.com" target="_blank">chs11</a>.</div>
   </body>
 </html>

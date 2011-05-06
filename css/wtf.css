@@ -89,3 +89,15 @@ dd {
 a:link, a:visited, a:active, a:hover {
   color: blue;
 }
+
+#fucker {
+  position: fixed;
+  right: 25px;
+  bottom: 5px;
+}
+
+#fucker a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
