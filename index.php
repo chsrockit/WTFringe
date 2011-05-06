@@ -9,6 +9,7 @@ $json_object = json_decode($json);
 <html>
   <head>
     <meta charset="utf-8">
+    <title>What the fuck should I watch tonight?</title>
     <link rel="stylesheet" type="text/css" href="css/wtf.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js" ></script>
     <script type="text/javascript" src="js/wtf.js"></script>
@@ -18,7 +19,7 @@ $json_object = json_decode($json);
 	<?$int = array_rand($info);
 	echo $info[$int];?>
 	</h1>
-    <h2 id="eventtitle"><?echo $json_object[0]->event_desc;?></h2>
+    <h2 id="eventtitle"><a href="<?echo $json_object[0]->event_url?>"><?echo $json_object[0]->event_desc;?></a></h2>
     <div id="eventinfo">
       <p id="eventdescription"><?echo $json_object[0]->event_info;?></p>
       <dl>
@@ -26,7 +27,7 @@ $json_object = json_decode($json);
       <dt>When</dt><dd id="time"><?echo $json_object[0]->start_time_hhmm;?></dd>
       <dl>
     </div>
-    <ul>
+    <ul class="nav">
     <li><a id="expanddescription" href="#">I want to read the fucking description</a></li>
     <li><a href="">I don't want to fucking see that</a></li>
     <li><a href="/splash_site/profanity.html">I don't fucking like profanity</a></li>

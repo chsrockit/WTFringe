@@ -68,3 +68,24 @@ h2 {
   font-size: 60pt;
 }
 
+dl {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+dt {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+dd {
+  margin-left: 30px;
+}
+
+.nav {
+  margin-top: 10px;
+}
+
+a:link, a:visited, a:active, a:hover {
+  color: blue;
+}
