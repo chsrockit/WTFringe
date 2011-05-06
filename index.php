@@ -19,7 +19,7 @@ $json_object = json_decode($json);
 	<?$int = array_rand($info);
 	echo $info[$int];?>
 	</h1>
-    <h2 id="eventtitle"><a class="titlelink" href="http://www.lmgtfy.com/?q=<?echo urlencode($json_object[0]->event_url)?>"><?echo $json_object[0]->event_desc;?></a></h2>
+    <h2 id="eventtitle"><a class="titlelink" href="http://www.lmgtfy.com/?q=<?echo urlencode($json_object[0]->event_desc)?>"><?echo $json_object[0]->event_desc;?></a></h2>
     <div id="eventinfo">
       <p id="eventdescription"><?echo $json_object[0]->event_info;?></p>
       <dl>
