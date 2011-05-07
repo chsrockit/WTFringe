@@ -7,16 +7,12 @@ $json = file_get_contents($url);
 $json_object = json_decode($json);
 $hhmm = $json_object[0]->start_time_hhmm;
 $yymmdd = $json_object[0]->start_date_yyyymmdd;
-echo $hhmm;
-echo $yymmdd;
-$year = substr($yymmdd, 0, 4);
-$month = substr($yymmdd, 4, 2);
-$day = substr($yymmdd, -2);
 
-$hour = substr($hhmm, -2, 2);
-$min = substr($hhmm, -2);
+$hhmm = strlen($hhmm) < 4 ? '0' . $hhmm : $hhmm;
 
-$event_time = $day . '/' . $month . '/' . $year  . ' ' . $hour . ':' . $minute;
+$arr = strptime($yymmdd . $hhmm, '%Y%m%d%H%M');
+$t  = mktime($arr['tm_hour'], $arr['tm_min'],$arr['tm_sec'], $arr['tm_mon'], $arr['tm_mday'],  $arr['tm_year'] + 1900);
+$event_time = strftime('%A %e %B %Y %R',  $t);
 ?>
 <!doctype html>
 <html>
