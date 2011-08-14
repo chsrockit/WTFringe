@@ -11,12 +11,10 @@ $url = 'http://api.festivalslab.com'.$data.'&signature='.$secret
 
 $json = file_get_contents($url);
 $json_object = json_decode($json);
-$hhmm = $json_object[0]->start_time_hhmm;
-$yymmdd = $json_object[0]->start_date_yyyymmdd;
+$start = $json_object[0]->performance[0]->start;
 
-$hhmm = strlen($hhmm) < 4 ? '0' . $hhmm : $hhmm;
-
-$arr = strptime($yymmdd . $hhmm, '%Y%m%d%H%M');
+2011-07-27 18:00:00
+$arr = strptime($start, '%Y-%m-%d %H:%M:%S');
 $t  = mktime($arr['tm_hour'], $arr['tm_min'],$arr['tm_sec'], $arr['tm_mon'], $arr['tm_mday'],  $arr['tm_year'] + 1900);
 $event_time = strftime('%A %e %B %Y %R',  $t);
 ?>
