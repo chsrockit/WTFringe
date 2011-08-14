@@ -10,7 +10,7 @@ $secret = hash_hmac('sha1', $data, $secret_access_key);
 $url = 'http://api.festivalslab.com'.$data.'&signature='.$secret;
 
 $curl_handle = curl_init();
-$headers = array('Accept: application/JSON');
+$headers = array('Accept: application/json');
 curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($curl_handle, CURLOPT_URL, $url);
 curl_setopt($curl_handle,CURLOPT_RETURNTRANSFER,1);
@@ -19,11 +19,8 @@ $json = curl_exec($curl_handle);
 curl_close($curl_handle);
 
 $json_object = json_decode($json);
-$start = $json_object[0]->performance[0]->start;
-
-$arr = strptime($start, '%Y-%m-%d %H:%M:%S');
-$t  = mktime($arr['tm_hour'], $arr['tm_min'],$arr['tm_sec'], $arr['tm_mon'], $arr['tm_mday'],  $arr['tm_year'] + 1900);
-$event_time = strftime('%A %e %B %Y %R',  $t);
+$start = $json_object[0]->performances[0]->start;
+$event_time = date('D j F G:i', strtotime($start));
 ?>
 <!doctype html>
 <html>
@@ -59,7 +56,7 @@ $event_time = strftime('%A %e %B %Y %R',  $t);
       <div id="eventinfo">
         <p id="eventdescription"><?echo $json_object[0]->description;?></p>
         <dl>
-        <dt>Where</dt><dd id="venue"><?echo $json_object[0]->venue_desc;?></dd>
+        <dt>Where</dt><dd id="venue"><?echo $json_object[0]->venue->name;?></dd>
         <dt>When</dt><dd id="time"><?echo $event_time?></dd>
         <dl>
       </div>
@@ -70,6 +67,6 @@ $event_time = strftime('%A %e %B %Y %R',  $t);
     </ul>
     <div id="profanity"><a href="/splash_site/profanity.html">I don't fucking like profanity</a></div>
     <div id="fuckers">This site was fucking made by <a href="http://github.com/chsrockit/" target="_blank">chsrockit!</a> at <a href="http://www.culturehackscotland.com" target="_blank">chs11</a>.</div>
-    <div style="display:none"><?echo $json_object[0]; ?></div>
+    <div style="display:none"><? print_r($json_object); ?></div>
   </body>
 </html>
