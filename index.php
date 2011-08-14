@@ -5,7 +5,7 @@ $shows = array('DREAMOF', 'ILOVEYO', 'LITTLEM', 'BURKLYN', 'NOSTALG', 'PINOCCH',
 $randint = array_rand($shows);
 
 $secret_access_key = 'hupsbJ060wj9ztXl';
-$data = '/events?filter=fringe&code='.$shows[$randint];
+$data = '/events?festival=fringe&code='.$shows[$randint];
 $secret = hash_hmac('sha1', $data, $secret_access_key);
 $url = 'http://api.festivalslab.com'.$data.'&signature='.$secret;
 
