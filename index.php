@@ -9,7 +9,15 @@ $data = '/events?festival=fringe&code='.$shows[$randint].'&key=hupsbJ060wj9ztXl'
 $secret = hash_hmac('sha1', $data, $secret_access_key);
 $url = 'http://api.festivalslab.com'.$data.'&signature='.$secret;
 
-$json = file_get_contents($url);
+$curl_handle = curl_init();
+$headers = array('Accept: application/JSON');
+curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($curl_handle, CURLOPT_URL, $url);
+curl_setopt($curl_handle,CURLOPT_RETURNTRANSFER,1);
+
+$json = curl_exec($curl_handle);
+curl_close($curl_handle);
+
 $json_object = json_decode($json);
 $start = $json_object[0]->performance[0]->start;
 
